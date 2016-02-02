@@ -58,6 +58,7 @@ export function travis() {
 
 ## Arguments
 
-`coveralls(file)`
+`coveralls(file, ootions)`
 
-* `options` – [coveralls options](https://github.com/coveralls/coveralls-node/blob/master/bin/coveralls), `{ disable: 'search,gcov', file: 'coverage/lcov.info' }` by default
+* `file` – path to `lcov.info`, `'coverage/lcov.info'` by default
+* `options` – [coveralls options](https://github.com/nickmerwin/node-coveralls/blob/master/lib/convertLcovToCoveralls.js), '{}' by default

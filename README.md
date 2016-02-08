@@ -1,3 +1,5 @@
+# start-coveralls
+
 [![npm](https://img.shields.io/npm/v/start-coveralls.svg?style=flat-square)](https://www.npmjs.com/package/start-coveralls)
 [![travis](http://img.shields.io/travis/start-runner/coveralls.svg?style=flat-square)](https://travis-ci.org/start-runner/coveralls)
 [![coverage](https://img.shields.io/codecov/c/github/start-runner/coveralls.svg?style=flat-square)](https://codecov.io/github/start-runner/coveralls)

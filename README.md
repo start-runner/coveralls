@@ -18,7 +18,7 @@ npm i -D start-coveralls
 
 ```js
 import Start from 'start';
-import logger from 'start-simple-logger';
+import reporter from 'start-pretty-reporter';
 import files from 'start-files';
 import clean from 'start-clean';
 import mocha from 'start-mocha';
@@ -26,7 +26,7 @@ import * as coverage from 'start-coverage';
 import coveralls from 'start-codecov';
 import istanbul from 'babel-istanbul';
 
-const start = Start(logger());
+const start = Start(reporter());
 
 export function cover() {
     return start(

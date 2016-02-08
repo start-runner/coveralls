@@ -1,6 +1,8 @@
 [![npm](https://img.shields.io/npm/v/start-coveralls.svg?style=flat-square)](https://www.npmjs.com/package/start-coveralls)
 [![travis](http://img.shields.io/travis/start-runner/coveralls.svg?style=flat-square)](https://travis-ci.org/start-runner/coveralls)
+[![coverage](https://img.shields.io/codecov/c/github/start-runner/coveralls.svg?style=flat-square)](https://codecov.io/github/start-runner/coveralls)
 [![deps](https://img.shields.io/gemnasium/start-runner/coveralls.svg?style=flat-square)](https://gemnasium.com/start-runner/coveralls)
+[![gitter](https://img.shields.io/badge/gitter-join_chat_%E2%86%92-00d06f.svg?style=flat-square)](https://gitter.im/start-runner/start)
 
 [Coveralls](https://coveralls.io/) task for [Start](https://github.com/start-runner/start).
 
@@ -12,17 +14,14 @@ npm i -D start-coveralls
 
 ## Usage
 
-Task is rely on LCOV report from [start-coverage](https://github.com/start-runner/coverage).
-
 ```js
-// tasks.js
 import Start from 'start';
 import logger from 'start-simple-logger';
-import clean from 'start-clean';
 import files from 'start-files';
+import clean from 'start-clean';
 import mocha from 'start-mocha';
 import * as coverage from 'start-coverage';
-import coveralls from 'start-coveralls';
+import coveralls from 'start-codecov';
 import istanbul from 'babel-istanbul';
 
 const start = Start(logger());
@@ -41,20 +40,15 @@ export function cover() {
 
 export function travis() {
     return start(
-        cover(),
+        cover,
         coveralls()
     );
 }
 ```
 
-```js
-// package.json
-"scripts": {
-  "task": "babel-node node_modules/.bin/start tasks",
-  "cover": "npm run task cover",
-  "travis": "npm run task travis"
-}
-```
+Task is rely on LCOV report from [start-coverage](https://github.com/start-runner/coverage).
+
+See [documentation](https://github.com/start-runner/start#readme) for details.
 
 ## Arguments
 

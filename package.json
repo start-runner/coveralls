@@ -1,6 +1,6 @@
 {
   "name": "start-coveralls",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Coveralls task for Start",
   "keywords": [ "start", "start-task", "coveralls" ],
   "homepage": "https://github.com/start-runner/coveralls",

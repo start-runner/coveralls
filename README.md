@@ -20,10 +20,11 @@ npm i -D start-coveralls
 import Start from 'start';
 import reporter from 'start-pretty-reporter';
 import files from 'start-files';
+import read from 'start-read';
 import clean from 'start-clean';
 import mocha from 'start-mocha';
 import * as coverage from 'start-coverage';
-import coveralls from 'start-codecov';
+import coveralls from 'start-coveralls';
 import istanbul from 'babel-istanbul';
 
 const start = Start(reporter());
@@ -43,18 +44,17 @@ export function cover() {
 export function travis() {
     return start(
         cover,
+        files('coverage/lcov.info'),
+        read(),
         coveralls()
     );
 }
 ```
 
-Task is rely on LCOV report from [start-coverage](https://github.com/start-runner/coverage).
-
-See [documentation](https://github.com/start-runner/start#readme) for details.
+This task relies on `[{ path, data, map }]` input and provides the same, see [documentation](https://github.com/start-runner/start#readme) for details.
 
 ## Arguments
 
-`coveralls(file, options)`
+`coveralls(options)`
 
-* `file` – path to `lcov.info`, `'coverage/lcov.info'` by default
 * `options` – [coveralls options](https://github.com/nickmerwin/node-coveralls/blob/master/lib/convertLcovToCoveralls.js), `{}` by default

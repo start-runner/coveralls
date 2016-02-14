@@ -1,7 +1,8 @@
 # start-coveralls
 
 [![npm](https://img.shields.io/npm/v/start-coveralls.svg?style=flat-square)](https://www.npmjs.com/package/start-coveralls)
-[![travis](http://img.shields.io/travis/start-runner/coveralls.svg?style=flat-square)](https://travis-ci.org/start-runner/coveralls)
+[![linux build](https://img.shields.io/travis/start-runner/coveralls.svg?label=linux&style=flat-square)](https://travis-ci.org/start-runner/coveralls)
+[![windows build](https://img.shields.io/appveyor/ci/start-runner/coveralls.svg?label=windows&style=flat-square)](https://ci.appveyor.com/project/start-runner/coveralls)
 [![coverage](https://img.shields.io/codecov/c/github/start-runner/coveralls.svg?style=flat-square)](https://codecov.io/github/start-runner/coveralls)
 [![deps](https://img.shields.io/gemnasium/start-runner/coveralls.svg?style=flat-square)](https://gemnasium.com/start-runner/coveralls)
 [![gitter](https://img.shields.io/badge/gitter-join_chat_%E2%86%92-00d06f.svg?style=flat-square)](https://gitter.im/start-runner/start)

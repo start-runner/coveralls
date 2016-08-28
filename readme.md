@@ -5,7 +5,6 @@
 [![windows build](https://img.shields.io/appveyor/ci/start-runner/coveralls.svg?label=windows&style=flat-square)](https://ci.appveyor.com/project/start-runner/coveralls)
 [![coverage](https://img.shields.io/codecov/c/github/start-runner/coveralls.svg?style=flat-square)](https://codecov.io/github/start-runner/coveralls)
 [![deps](https://img.shields.io/gemnasium/start-runner/coveralls.svg?style=flat-square)](https://gemnasium.com/start-runner/coveralls)
-[![gitter](https://img.shields.io/badge/gitter-join_chat_%E2%86%92-00d06f.svg?style=flat-square)](https://gitter.im/start-runner/start)
 
 [Coveralls](https://coveralls.io/) task for [Start](https://github.com/start-runner/start).
 
@@ -24,9 +23,8 @@ import files from 'start-files';
 import read from 'start-read';
 import clean from 'start-clean';
 import mocha from 'start-mocha';
-import * as coverage from 'start-coverage';
+import * as istanbul from 'start-istanbul';
 import coveralls from 'start-coveralls';
-import istanbul from 'babel-istanbul';
 
 const start = Start(reporter());
 
@@ -35,10 +33,10 @@ export function cover() {
         files('coverage/'),
         clean(),
         files('lib/**/*.js'),
-        coverage.instrument(istanbul),
+        istanbul.instrument(),
         files('test/**/*.js'),
         mocha(),
-        coverage.report()
+        istanbul.report()
     );
 }
 

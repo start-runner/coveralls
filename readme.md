@@ -10,8 +10,10 @@
 
 ## Install
 
-```
-npm i -D start-coveralls
+```sh
+npm install --save-dev start-coveralls
+# or
+yarn add --dev start-coveralls
 ```
 
 ## Usage
@@ -28,26 +30,22 @@ import coveralls from 'start-coveralls';
 
 const start = Start(reporter());
 
-export function cover() {
-    return start(
-        files('coverage/'),
-        clean(),
-        files('lib/**/*.js'),
-        istanbul.instrument(),
-        files('test/**/*.js'),
-        mocha(),
-        istanbul.report()
-    );
-}
+export const cover = () => start(
+  files('coverage/'),
+  clean(),
+  files('lib/**/*.js'),
+  istanbul.instrument(),
+  files('test/**/*.js'),
+  mocha(),
+  istanbul.report()
+);
 
-export function travis() {
-    return start(
-        cover,
-        files('coverage/lcov.info'),
-        read(),
-        coveralls()
-    );
-}
+export const travis = () => start(
+  cover,
+  files('coverage/lcov.info'),
+  read(),
+  coveralls()
+);
 ```
 
 This task relies on `[{ path, data, map }]` input and provides the same, see [documentation](https://github.com/start-runner/start#readme) for details.
